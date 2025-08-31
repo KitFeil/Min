@@ -1,0 +1,38 @@
+.animated-gradient {
+    /* Градиент с повторением */
+    background: linear-gradient(90deg, #ff6ec4, #7873f5, #ff6ec4);
+    /* Делаем градиент в 2 раза шире элемента */
+    background-size: 200% auto;
+    /* Обрезаем фон по тексту (с префиксами для совместимости) */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Делаем исходный цвет текста прозрачным */
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: bold;
+    /* Анимация (с префиксами) */
+    -webkit-animation: gradient-shift 3s linear infinite;
+    animation: gradient-shift 3s linear infinite;
+    /* Обеспечиваем хорошее отображение в разных браузерах */
+    display: inline-block;
+    padding: 0;
+}
+
+/* Анимация движения градиента (с префиксами) */
+@-webkit-keyframes gradient-shift {
+    0% { 
+        background-position: 0% center;
+    }
+    100% { 
+        background-position: 200% center;
+    }
+}
+
+@keyframes gradient-shift {
+    0% { 
+        background-position: 0% center;
+    }
+    100% { 
+        background-position: 200% center;
+    }
+}
